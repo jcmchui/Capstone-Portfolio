@@ -199,6 +199,31 @@ header .follow a:hover{
     padding:.5rem 0;
 }
 
+.video-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Inline block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margins */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.video-button a {
+    color: white; /* White text color inside button */
+    text-decoration: none; /* Remove underline from link */
+    display: block; /* Block-level link to fill the button */
+}
+
+.video-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
 .about .row-1{
     display: flex;
     flex-wrap: wrap;
