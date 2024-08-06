@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <input type="text" placeholder="Name" id="name" name="name" class="box" required>
+        <input type="email" placeholder="Email" id="email" name="email" class="box" required>
+        <input type="number" placeholder="Number" id="number" name="number" class="box" required>
+        <input type="text" placeholder="Subject" id="subject" name="subject" class="box" required>
+        <textarea name="message" placeholder="Message" id="message" cols="30" rows="10" required></textarea>
+        <input type="submit" class="btn" value="Send Message">
+    </form>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const number = document.getElementById("number").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            const body = `
+                Name: ${name} <br>
+                Email: ${email} <br>
+                Number: ${number} <br>
+                Subject: ${subject} <br>
+                Message: ${message}
+            `;
+
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "davidmwaniki2001@gmail.com",
+                Password: "david5512", // Use App Password
+                To: 'davidmwaniki2001@gmail.com',
+                From: email,
+                Subject: "New Contact Form Enquiry: " + subject,
+                Body: body
+            }).then(
+                message => alert(message)
+            ).catch(
+                error => console.error(error)
+            );
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+  <form method="POST" action="sendEmail()">
